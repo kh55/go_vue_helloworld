@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - 8080:8080
+    volumes:
+      - ./frontend:/app
+    command: yarn serve
+
+  backend:
+    build: ./backend
+    ports:
+      - 8888:8888
+    volumes:
+      - ./backend:/api
